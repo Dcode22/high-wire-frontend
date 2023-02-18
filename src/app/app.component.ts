@@ -7,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   userAction = async () => {
-    const response = await fetch('https://high-wire-news.herokuapp.com/articles');
-    const myJson = await response.json(); //extract JSON from the http response
-    // do something with myJson
-    console.log(myJson)
+    const response = fetch('https://high-wire-news-backend.herokuapp.com/articles')
+      .then(response => response.json())
+      .then(data => {
+        
+        console.log(data)
+      })
+      .catch(error => console.error(error));
   }
   ngOnInit(): void {
     console.log('working')
