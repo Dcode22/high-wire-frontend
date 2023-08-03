@@ -1,0 +1,13 @@
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    min-height: calc(100vh - 80px);
+}
+
+.column {
+    height: 100%;
+}
+
+.column:not(:last-child){
+    border-right: 1px solid white;
+}

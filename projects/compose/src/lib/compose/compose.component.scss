@@ -1,0 +1,11 @@
+.NgxEditor__Wrapper {
+   text-align: left;
+}
+
+form {
+   display: flex;
+   flex-direction: column;
+   mat-form-field {
+      width: 500px;
+   }
+}

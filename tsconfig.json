@@ -5,8 +5,29 @@
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
+    "strictPropertyInitialization": false,
     "strict": true,
     "noImplicitOverride": true,
+    "paths": {
+      "article-view": [
+        "dist/article-view"
+      ],
+      "compose": [
+        "dist/compose"
+      ],
+      "data": [
+        "dist/data"
+      ],
+      "header": [
+        "dist/header"
+      ],
+      "homepage": [
+        "dist/homepage"
+      ],
+      "settings": [
+        "dist/settings"
+      ]
+    },
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,

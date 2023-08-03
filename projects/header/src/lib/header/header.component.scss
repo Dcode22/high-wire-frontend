@@ -1,0 +1,27 @@
+header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 80px;
+    border-bottom: 1px white solid;
+    .logo-div {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .highwire-logo {
+            height: 65px;
+        }
+    }
+
+    .header-right {
+        display: flex;
+        justify-content: flex-end;
+        align-items: end;
+
+        header-menu {
+            margin: 8px;
+        }
+
+    }
+}

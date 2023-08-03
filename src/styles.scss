@@ -12,15 +12,15 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$high-wire-frontend-primary: mat.define-palette(mat.$indigo-palette);
-$high-wire-frontend-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$high-wire-frontend-primary: mat.define-palette(mat.$red-palette);
+$high-wire-frontend-accent: mat.define-palette(mat.$green-palette, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
 $high-wire-frontend-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$high-wire-frontend-theme: mat.define-light-theme((
+$high-wire-frontend-theme: mat.define-dark-theme((
   color: (
     primary: $high-wire-frontend-primary,
     accent: $high-wire-frontend-accent,
@@ -38,6 +38,23 @@ body{
     height: 100vh;
     width: 100vw;
     background-color: black;
+    color: white;
+    font-family: 'Courier New' !important;
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.NgxEditor__Wrapper {
+  * {
+      background-color: black;
+      color: white;
+  }
+}
+
+.NgxEditor__MenuBar {
+  background-color: black !important;
+  color: white
+}
+
+.NgxEditor__Content {
+  min-height: 400px; /* make all of the editor area clickable */
+}
