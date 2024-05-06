@@ -4,4 +4,5 @@ export interface Article {
     headlineImage?: String;
     articleText: String;
     publishedDate: String;
+    _id: string;
 }

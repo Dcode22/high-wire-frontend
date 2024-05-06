@@ -1,0 +1,15 @@
+mat-card {
+    padding: 16px;
+    width: 410px;
+    border-radius: 0%;
+    box-shadow: none;
+    height: 400px;
+    background: none;
+    border-bottom: 1px grey solid;
+    img {
+        height: 275px;
+        width: 100%;
+        object-fit: cover;
+        margin-bottom: 10px;
+    }
+}

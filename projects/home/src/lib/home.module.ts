@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
+import { HeaderModule } from 'projects/header/src/public-api';
 import { HomepageComponent } from './homepage/homepage.component';
-import { MatCardModule } from '@angular/material/card';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CommonModule } from '@angular/common';
 import { ArticleCardComponent } from './article-card/article-card.component';
+import { CommonModule } from '@angular/common';
+import { MatCardModule } from '@angular/material/card';
+import { RouterModule } from '@angular/router';
+
 
 
 @NgModule({
@@ -13,12 +15,11 @@ import { ArticleCardComponent } from './article-card/article-card.component';
   ],
   imports: [
     CommonModule,
+    HeaderModule,
     MatCardModule,
-    BrowserAnimationsModule
+    RouterModule
   ],
   exports: [
-    HomepageComponent,
-    ArticleCardComponent
   ]
 })
-export class HomepageModule { }
+export class HomeModule { }

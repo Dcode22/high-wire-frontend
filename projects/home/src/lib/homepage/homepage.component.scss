@@ -1,0 +1,22 @@
+.date-row {
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+    width: 100%;
+    text-align: center;
+    font-size: 0.8rem;
+    border-bottom: 1px solid white;
+    margin: 0%;
+    padding: 0%;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 16px;
+    width: 1260px;
+    margin: auto;
+    padding: 0px;
+}
+

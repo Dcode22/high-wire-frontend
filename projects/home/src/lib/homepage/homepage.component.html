@@ -1,0 +1,6 @@
+<div class="date-row">
+    {{dateString}}
+</div>
+<main>
+    <home-article-card class="grid-item" *ngFor="let article of articles" [article]="article" [routerLink]="'articles/' + article._id"></home-article-card>
+</main>

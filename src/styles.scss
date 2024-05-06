@@ -39,10 +39,12 @@ body{
     width: 100vw;
     background-color: black;
     color: white;
-    font-family: 'Courier New' !important;
 }
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { 
+  margin: 0; 
+  font-family:  'Times New Roman', Times, serif;
+}
 .NgxEditor__Wrapper {
   * {
       background-color: black;

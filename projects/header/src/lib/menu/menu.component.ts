@@ -13,9 +13,10 @@ import { DOCUMENT } from '@angular/common';
         <mat-icon>menu</mat-icon>
       </button>
       <mat-menu #menu>
-        <div class="menu-item"  mat-menu-item (click)="auth.logout({ logoutParams: { returnTo: document.location.origin } })">Log out</div>
+        <a routerLink="/"><div class="menu-item" mat-menu-item>Home</div></a>
         <a routerLink="/settings"><div class="menu-item" mat-menu-item>Settings</div></a>
         <a routerLink="/compose"><div class="menu-item" mat-menu-item>Compose</div></a>
+        <div class="menu-item"  mat-menu-item (click)="auth.logout({ logoutParams: { returnTo: document.location.origin } })">Log out</div>
       </mat-menu>
     </ng-container>
 

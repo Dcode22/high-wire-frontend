@@ -21,6 +21,9 @@
       "header": [
         "dist/header"
       ],
+      "home": [
+        "dist/home"
+      ],
       "homepage": [
         "dist/homepage"
       ],

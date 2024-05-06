@@ -1,1 +1,10 @@
-<p>article-view works!</p>
+<main>
+    <div class="headline-container">    
+        <h1>{{article?.headline}}</h1>
+        <h4>{{article?.subtitle}}</h4>
+    </div>
+    <img src="{{article?.headlineImage}}" alt="">
+    <p>{{article?.publishedDate}}</p>
+    <div [innerHTML]="article?.articleText"></div>
+</main>
+    
