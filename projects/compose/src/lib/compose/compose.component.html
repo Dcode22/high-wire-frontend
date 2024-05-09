@@ -1,20 +1,22 @@
-<h1>Compose</h1>
-<form [formGroup]="form">
-    <mat-form-field appearance="outline">
-        <mat-label>Article Headline</mat-label>
-        <input formControlName="headline" matInput type="text">
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-        <mat-label>Article Subtitle</mat-label>
-        <textarea formControlName="subtitle" matInput type="text"></textarea>
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-        <mat-label>Article Header Image Url</mat-label>
-        <input formControlName="headlineImage" matInput type="text">
-    </mat-form-field>
-</form>
-<div class="NgxEditor__Wrapper">
-    <ngx-editor-menu [editor]="editor"> </ngx-editor-menu>
-    <ngx-editor minHeight="500px" [editor]="editor" [(ngModel)]="html" [disabled]="false" [placeholder]="'Type here...'"></ngx-editor>
-</div>
-<button mat-raised-button color="primary" (click)="save()"> Save</button>
+<main>
+    <h2>Compose</h2>
+    <form [formGroup]="form">
+        <mat-form-field appearance="outline">
+            <mat-label>Article Headline</mat-label>
+            <input class="headline-input" formControlName="headline" matInput type="text">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Article Subtitle</mat-label>
+            <textarea formControlName="subtitle" matInput type="text"></textarea>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Article Header Image Url (optional)</mat-label>
+            <input formControlName="headlineImage" matInput type="text">
+        </mat-form-field>
+    </form>
+    <div class="NgxEditor__Wrapper">
+        <ngx-editor-menu [editor]="editor"> </ngx-editor-menu>
+        <ngx-editor minHeight="500px" [editor]="editor" [(ngModel)]="html" [disabled]="false" [placeholder]="'Type here...'"></ngx-editor>
+    </div>
+    <button mat-raised-button color="primary" (click)="save()"> Save</button>
+</main>

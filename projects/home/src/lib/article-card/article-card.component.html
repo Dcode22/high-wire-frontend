@@ -1,5 +1,10 @@
-<mat-card>
-    <img *ngIf="article?.headlineImage" src="{{article.headlineImage}}" alt="">
-    <h2 mat-card-title>{{article.headline}}</h2>
-    <p>{{article.subtitle}}</p>
-</mat-card>
+<div class="container">
+    @if(article.headlineImage){
+        <img *ngIf="article?.headlineImage" src="{{article.headlineImage}}" alt="">
+        <h2>{{article.headline}}</h2>
+        <p class="subtitle">{{article.subtitle}}</p>
+    } @else {
+        <h1>{{article.headline}}</h1>
+        <p class="subtitle">{{article.subtitle}}</p>
+    }
+</div>

@@ -2,8 +2,14 @@ main {
     width: 1260px;
     margin: auto;
     .headline-container {
-      text-align: center;
-      width: 100%;  
+        text-align: center;
+        width: 100%;  
+        h1 {
+            font-size: 80px;
+        }
+    }
+    img {
+        width: 100%;
     }
 }
 

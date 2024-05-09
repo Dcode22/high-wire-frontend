@@ -4,7 +4,7 @@
         <h4>{{article?.subtitle}}</h4>
     </div>
     <img src="{{article?.headlineImage}}" alt="">
-    <p>{{article?.publishedDate}}</p>
+    <p>{{articleDateString}}</p>
     <div [innerHTML]="article?.articleText"></div>
 </main>
     

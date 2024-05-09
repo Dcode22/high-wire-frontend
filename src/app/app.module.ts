@@ -4,6 +4,7 @@ import { AuthModule } from '@auth0/auth0-angular';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderModule } from 'projects/header/src/public-api';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { HeaderModule } from 'projects/header/src/public-api';
     BrowserModule,
     AppRoutingModule,
     HeaderModule,
+    HttpClientModule,
     AuthModule.forRoot({
       domain: 'dev-6s1h0nhp.us.auth0.com',
       clientId: 'lzl2tBwdy8SJJFpOmhxX7CSR77Biz0hb',

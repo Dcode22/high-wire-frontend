@@ -11,6 +11,7 @@ const routes: Routes = [
   {path: 'settings', pathMatch: 'full', component: SettingsComponent},
   {path: 'compose', pathMatch: 'full', component: ComposeComponent},
   {path: 'compose/:id', pathMatch: 'full', component: ComposeComponent},
+  {path: '**', redirectTo: ''}
 
 ];
 

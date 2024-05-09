@@ -10,6 +10,7 @@ import { Article } from 'projects/data/src/lib/models/data.models';
 export class ArticleViewComponent implements OnInit {
   constructor(private route: ActivatedRoute){}
   article: Article | undefined;
+  articleDateString: string;
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       let id = params.get('id');
@@ -18,10 +19,10 @@ export class ArticleViewComponent implements OnInit {
       .then(data => {
         console.log('data', data)
         this.article = data;
+        let date = new Date(Number(this.article?.publishedDate!));
+        this.articleDateString = date.toLocaleString(undefined, { dateStyle: 'long', timeStyle: 'short' });
       })
       .catch(error => console.error(error));
-      // Now do something with this.id, like call a service to get the blog post details
-      // If 'id' was not provided in the route, params.get('id') will return null
     });
   }
 }

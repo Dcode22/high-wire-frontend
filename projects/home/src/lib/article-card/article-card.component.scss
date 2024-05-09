@@ -1,11 +1,23 @@
-mat-card {
+.container {
     padding: 16px;
-    width: 410px;
+    width: 400px;
     border-radius: 0%;
     box-shadow: none;
     height: 400px;
     background: none;
     border-bottom: 1px grey solid;
+    h1, h2 {
+        margin: 0%;
+        margin-bottom: 16px;
+    }
+
+    h1 {
+        font-size: 50px;
+    }
+    .subtitle {
+        font-family: 'Helvetica Neue', Helvetica, sans-serif;
+        font-weight: 300;
+    }
     img {
         height: 275px;
         width: 100%;
