@@ -13,16 +13,8 @@ export class AppComponent implements OnInit {
     private userService: UserService
   ){}
   ngOnInit(): void {
-    this.authService.user$.subscribe((user: Auth0User | null | undefined) => {
-      if(user?.email){
-        this.userService.getUserByEmail(user.email).pipe(first()).subscribe(res => {
-          if(res === 'cannot find user'){
-            this.userService.createUserProfile(user.email!).pipe(first()).subscribe(res => {
-              console.log('user profile res: ', res)
-            })
-          }
-        })
-      }
+    this.userService.getUserWithAuth0Data().pipe(first()).subscribe(res => {
+      console.log('user res: ', res)
     })
   }
 }

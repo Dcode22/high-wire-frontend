@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Article } from 'projects/data/src/lib/models/data.models';
+import { Article } from 'projects/data/src/lib/models/article.models';
+import { ArticleService } from 'projects/services/src/public-api';
+import { first } from 'rxjs';
 
 @Component({
   selector: 'lib-homepage',
@@ -7,19 +9,12 @@ import { Article } from 'projects/data/src/lib/models/data.models';
   styleUrls: ['./homepage.component.scss']
 })
 export class HomepageComponent implements OnInit {
+  constructor(private articleService: ArticleService){}
   articles: Array<Article> = [];
-  getArticles = async () => {
-    fetch('http://localhost:3000/articles')
-      .then(response => response.json())
-      .then(data => {
-        console.log('data', data)
-        this.articles = data;
-      })
-      .catch(error => console.error(error));
-  }
   dateString: string = new Date().toLocaleDateString(undefined, {dateStyle: 'full'})
   ngOnInit(): void {
-    console.log('working')
-    this.getArticles()
+    this.articleService.getArticles().pipe(first()).subscribe((articles: Article[]) => {
+      this.articles = articles;
+    })
   }
 }

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Article } from 'projects/data/src/lib/models/data.models';
+import { Article } from 'projects/data/src/lib/models/article.models';
 
 @Component({
   selector: 'home-article-card',
