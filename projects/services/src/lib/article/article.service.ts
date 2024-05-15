@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Article } from 'projects/data/src/lib/models/article.models';
+import { Article } from 'projects/data-models/src/lib/models/article.models';
 import { Observable, catchError, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
 @Injectable({

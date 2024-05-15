@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Article } from 'projects/data/src/lib/models/article.models';
+import { Article } from 'projects/data-models/src/lib/models/article.models';
 import { ArticleService } from 'projects/services/src/public-api';
 import { first } from 'rxjs';
 

@@ -32,6 +32,9 @@
       ],
       "settings": [
         "dist/settings"
+      ],
+      "state": [
+        "./dist/state"
       ]
     },
     "noPropertyAccessFromIndexSignature": true,

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { User } from 'projects/data/src/public-api';
+import { User } from 'projects/data-models/src/public-api';
 import { Observable, catchError, first, map, of, switchMap, take, throwError } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { environment } from 'src/environments/environment';
