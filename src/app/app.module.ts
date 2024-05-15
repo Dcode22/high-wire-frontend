@@ -25,7 +25,7 @@ import { environment } from 'src/environments/environment';
         redirect_uri: window.location.origin
       },
       httpInterceptor: {
-        allowedList: [`${environment.apiEndpoint}/*`]
+        allowedList: [`${environment.apiEndpoint}/users/*`]
       }
     }),
   ],

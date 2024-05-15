@@ -13,8 +13,13 @@ export class AppComponent implements OnInit {
     private userService: UserService
   ){}
   ngOnInit(): void {
-    this.userService.getUserWithAuth0Data().pipe(first()).subscribe(res => {
-      console.log('user res: ', res)
+    this.authService.isAuthenticated$.pipe(first()).subscribe(res => {
+      if(res){
+        this.userService.getUserWithAuth0Data().pipe(first()).subscribe(user => {
+        })
+      } else {
+        console.log('not logged in')
+      }
     })
   }
 }
