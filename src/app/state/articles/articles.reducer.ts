@@ -17,6 +17,7 @@ export const initialState: ArticlesState = articlesAdapter.getInitialState({
 export const articlesReducer = createReducer(
     initialState,
     on(ArticlesActions.getArticlesSuccess, (state, { articles }) =>  articlesAdapter.setAll(articles, state)),
+    on(ArticlesActions.getArticle, (state) => ({...state, loaded: false, selectedId: null})),
     on(ArticlesActions.getArticleSuccess, (state, {article}) => articlesAdapter.upsertOne(article, {...state, selectedId: article._id})),
     on(ArticlesActions.createArticleSuccess, (state, {article}) => articlesAdapter.addOne(article, {...state, selectedId: article._id})),
     on(ArticlesActions.editArticleSuccess, (state, {article}) => articlesAdapter.upsertOne(article, {...state, selectedId: article._id})),

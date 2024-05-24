@@ -1,11 +1,13 @@
-<div class="date-row">
-    {{dateString}}
-</div>
-<main>
-    @for(article of (allArticles$ | async); track article){
-        <home-article-card class="grid-item" [article]="article" [routerLink]="'articles/' + article._id"></home-article-card>
-    }
-    @for(article of (allArticles$ | async); track article){
-        <home-article-card class="grid-item" [article]="article" [routerLink]="'articles/' + article._id"></home-article-card>
-    }
-</main>
+<ng-container *ngrxLet="user$ as user">
+    <div class="date-row">
+        {{dateString}}
+    </div>
+    <main>
+        @for(article of (allArticles$ | async); track article){
+            <home-article-card class="grid-item" [article]="article" [user]="user" [routerLink]="'articles/' + article._id"></home-article-card>
+        }
+        @for(article of (allArticles$ | async); track article){
+            <home-article-card class="grid-item" [article]="article" [user]="user" [routerLink]="'articles/' + article._id"></home-article-card>
+        }
+    </main>
+</ng-container>

@@ -7,4 +7,17 @@
         <h1>{{article.headline}}</h1>
         <p class="subtitle">{{article.subtitle}}</p>
     }
+
+    <div class="votes-container">
+        <div class="article-votes">
+            <div class="upvotes">
+                <div class="votes-number">{{article.upvotes}}</div>
+                <mat-icon  [fontSet]="(article | checkUpvoted : user)? 'material-icons' : 'material-icons-outlined'">thumb_up</mat-icon>
+            </div>
+            <div class="downvotes">
+                <mat-icon  [fontSet]="(article | checkDownvoted : user)? 'material-icons' : 'material-icons-outlined'" >thumb_down</mat-icon>
+                <div class="votes-number">{{article.downvotes}}</div>
+            </div>
+        </div>
+    </div>
 </div>

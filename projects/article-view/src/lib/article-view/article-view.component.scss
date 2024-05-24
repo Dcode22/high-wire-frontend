@@ -43,6 +43,10 @@ main {
     .voting-div {
         display: flex;
         justify-content: center;
+        gap: 24px;
+        .icon-large{
+            transform: scale(1.5);
+        }
     }
 }
 

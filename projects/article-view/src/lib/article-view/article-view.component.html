@@ -28,11 +28,11 @@
     <div class="article-text" [innerHTML]="article?.articleText"></div>
 
     <div class="voting-div">
-        <button mat-icon-button [matTooltip]="user ? 'Upvote Article' : 'Signup to upvote'" (click)="upvoteClick(article!, user)">
+        <button class="icon-large" mat-icon-button [matTooltip]="user ? ((article | checkUpvoted : user)? 'Remove Upvote':'Upvote Article') : 'Signup to upvote'" (click)="upvoteClick(article!, user)">
             <mat-icon  [fontSet]="(article | checkUpvoted : user)? 'material-icons' : 'material-icons-outlined'">thumb_up</mat-icon>
         </button>
-        <button mat-icon-button [matTooltip]="user ? 'Downvote Article' : 'Signup to downvote'" (click)="downvoteClick(article!, user)">
-            <mat-icon [fontSet]="(article | checkDownvoted : user)? 'material-icons' : 'material-icons-outlined'" >thumb_down</mat-icon>
+        <button class="icon-large" mat-icon-button [matTooltip]="user ? ((article | checkDownvoted : user)? 'Remove Downvote':'Downvote Article') : 'Signup to downvote'" (click)="downvoteClick(article!, user)">
+            <mat-icon  [fontSet]="(article | checkDownvoted : user)? 'material-icons' : 'material-icons-outlined'" >thumb_down</mat-icon>
         </button>
     </div>
 </main>

@@ -24,4 +24,32 @@
         object-fit: cover;
         margin-bottom: 10px;
     }
+
+    .votes-container {
+        display: flex;
+        justify-content: flex-end;
+        .article-votes {
+            display: flex;
+            align-items: center;
+            font-family: 'Helvetica Neue', Helvetica, sans-serif;
+            .upvotes, .downvotes {
+                font-size: small;
+                height: 30px;
+                border: 1px grey solid;
+                padding: 0 8px 0 8px;
+                display: flex;
+                gap: 8px;
+                align-items: center;
+            }
+            .upvotes {
+                border-radius: 15px 0 0 15px;
+            }
+            .downvotes {
+                border-radius: 0 15px 15px 0;
+            }
+            .votes-number{
+                font-size: large;
+            }
+        }
+    }
 }

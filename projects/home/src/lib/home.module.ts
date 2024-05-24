@@ -5,6 +5,10 @@ import { ArticleCardComponent } from './article-card/article-card.component';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { RouterModule } from '@angular/router';
+import { CheckDownvotedPipe } from 'projects/pipes/src/lib/check-downvoted/check-downvoted.pipe';
+import { CheckUpvotedPipe } from 'projects/pipes/src/lib/check-upvoted/check-upvoted.pipe';
+import { MatIconModule } from '@angular/material/icon';
+import { LetDirective } from '@ngrx/component';
 
 
 
@@ -17,7 +21,11 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     HeaderModule,
     MatCardModule,
-    RouterModule
+    RouterModule,
+    CheckDownvotedPipe,
+    CheckUpvotedPipe,
+    MatIconModule,
+    LetDirective
   ],
   exports: [
   ]
