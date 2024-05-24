@@ -1,0 +1,11 @@
+main {
+    width: 1260px;
+    margin: auto;
+    .name-div {
+        display: flex;
+        gap: 16px;
+    }
+    .bio {
+        width: 500px;
+    }
+}

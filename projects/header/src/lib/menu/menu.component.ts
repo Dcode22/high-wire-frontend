@@ -1,7 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { AuthService } from '@auth0/auth0-angular';
 import { DOCUMENT } from '@angular/common';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'header-menu',
   template: `
@@ -21,7 +21,7 @@ import { DOCUMENT } from '@angular/common';
     </ng-container>
 
     <ng-template #loggedOut>
-      <button mat-raised-button color="primary" (click)="auth.loginWithRedirect()">Log in</button>
+      <button mat-raised-button color="primary" (click)="login()">Log in</button>
     </ng-template>
   `,
   styles: [
@@ -32,5 +32,8 @@ import { DOCUMENT } from '@angular/common';
   ]
 })
 export class MenuComponent {
-  constructor(@Inject(DOCUMENT) public document: Document, public auth: AuthService) {}
+  constructor(@Inject(DOCUMENT) public document: Document, public auth: AuthService, private router: Router) {}
+  login(){
+    this.auth.loginWithRedirect({appState: { target: this.router.url }});
+  }
 }

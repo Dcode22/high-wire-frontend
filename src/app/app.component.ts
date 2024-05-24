@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService, User as Auth0User } from '@auth0/auth0-angular';
-import { UserService } from 'projects/services/src/public-api';
+import { AuthService } from '@auth0/auth0-angular';
 import { first } from 'rxjs';
+import { UsersFacade } from './state/users/users.facade';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,13 +10,12 @@ import { first } from 'rxjs';
 export class AppComponent implements OnInit {
   constructor(
     private authService: AuthService,
-    private userService: UserService
+    private usersFacade: UsersFacade
   ){}
   ngOnInit(): void {
     this.authService.isAuthenticated$.pipe(first()).subscribe(res => {
       if(res){
-        this.userService.getUserWithAuth0Data().pipe(first()).subscribe(user => {
-        })
+        this.usersFacade.getUser();
       } else {
         console.log('not logged in')
       }

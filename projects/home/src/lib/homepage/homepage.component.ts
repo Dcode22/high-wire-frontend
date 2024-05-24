@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Article } from 'projects/data-models/src/lib/models/article.models';
-import { ArticleService } from 'projects/services/src/public-api';
-import { first } from 'rxjs';
+import { ArticlesFacade } from 'src/app/state/articles/articles.facade';
 
 @Component({
   selector: 'lib-homepage',
@@ -9,12 +7,10 @@ import { first } from 'rxjs';
   styleUrls: ['./homepage.component.scss']
 })
 export class HomepageComponent implements OnInit {
-  constructor(private articleService: ArticleService){}
-  articles: Array<Article> = [];
+  constructor(private articlesFacade: ArticlesFacade){}
+  allArticles$ = this.articlesFacade.allArticles$;
   dateString: string = new Date().toLocaleDateString(undefined, {dateStyle: 'full'})
   ngOnInit(): void {
-    this.articleService.getArticles().pipe(first()).subscribe((articles: Article[]) => {
-      this.articles = articles;
-    })
+    this.articlesFacade.getArticles();
   }
 }

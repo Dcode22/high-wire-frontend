@@ -2,5 +2,5 @@
  * Public API Surface of services
  */
 
-export * from './lib/user/user.service';
-export * from './lib/article/article.service';
+export * from './lib/users/users.service';
+export * from './lib/articles/articles.service';

@@ -1,20 +1,13 @@
 import { NgModule } from '@angular/core';
-import { SettingsComponent } from './settings/settings.component';
-import { UserProfileComponent } from './user-profile/user-profile.component';
 import { CommonModule } from '@angular/common';
 
 
 
 @NgModule({
-  declarations: [
-    UserProfileComponent,
-    SettingsComponent
-  ],
+  declarations: [],
   imports: [
-    CommonModule
+    CommonModule,
   ],
-  exports: [
-    SettingsComponent
-  ]
+  exports: []
 })
 export class SettingsModule { }

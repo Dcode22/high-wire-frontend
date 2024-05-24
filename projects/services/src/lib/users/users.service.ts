@@ -8,7 +8,7 @@ import { User as Auth0User, AuthService } from '@auth0/auth0-angular';
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class UsersService {
 
   constructor(private http: HttpClient, private snackBar: MatSnackBar, private authService: AuthService) { }
 
@@ -26,5 +26,12 @@ export class UserService {
       })
     )
   };
+
+  editUser(userId: string, userUpdates: Partial<User>): Observable<User>{
+    return this.http.patch<User>(environment.apiEndpoint + '/users/' + userId, userUpdates)
+    .pipe(
+      catchError(error => throwError(() => error))
+    )
+  }
 
 }

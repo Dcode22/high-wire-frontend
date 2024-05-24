@@ -27,6 +27,9 @@
       "homepage": [
         "dist/homepage"
       ],
+      "pipes": [
+        "./dist/pipes"
+      ],
       "services": [
         "./dist/services"
       ],

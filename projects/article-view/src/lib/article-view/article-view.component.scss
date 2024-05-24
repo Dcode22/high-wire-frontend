@@ -1,15 +1,48 @@
 main {
-    width: 1260px;
+    width: 800px;
     margin: auto;
+    padding-bottom: 100px;
+    font-family:  'PT Serif', serif;
     .headline-container {
         text-align: center;
         width: 100%;  
         h1 {
-            font-size: 80px;
+            font-size: 60px;
         }
     }
-    img {
+    .headline-image {
         width: 100%;
+        margin-bottom: 16px;
+    }
+    .author-edit-container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .author-info {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        .author-avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+    }
+
+    .publication-dates {
+        font-size: 16px;
+    }
+
+    .article-text{
+        font-weight: 100 !important;
+        line-height: 30px;
+        font-size: 20px;
+    }
+
+    .voting-div {
+        display: flex;
+        justify-content: center;
     }
 }
 

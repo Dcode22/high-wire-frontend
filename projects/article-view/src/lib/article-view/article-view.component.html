@@ -1,10 +1,39 @@
-<main>
+<ng-container *ngrxLet="user$ as user">
+<main *ngrxLet="selectedArticle$ as article">
     <div class="headline-container">    
         <h1>{{article?.headline}}</h1>
-        <h4>{{article?.subtitle}}</h4>
+        <h3>{{article?.subtitle}}</h3>
     </div>
-    <img src="{{article?.headlineImage}}" alt="">
-    <p>{{articleDateString}}</p>
-    <div [innerHTML]="article?.articleText"></div>
+    <div class="author-edit-container">
+        <div class="author-info">
+            <img [src]="article?.authorPicture" class="author-avatar" width="50" height="50" alt="">
+            <i>By {{article?.authorName}}</i> 
+        </div>
+        @if(user?._id === article?.userId || user?.admin){
+            <button mat-flat-button [routerLink]="'/compose/' + article?._id" ><mat-icon fontIcon="edit"></mat-icon> Edit Article</button>
+        }
+    </div>
+    <p class="publication-dates">
+        <i>{{article?.lastUpdatedDate ? 'Published:' : ''}} {{getArticleDateString(article?.publishedDate)}}</i>
+        @if(article?.lastUpdatedDate){
+            <br>
+            <i>Last Updated: {{getArticleDateString(article?.lastUpdatedDate)}}</i> 
+        }
+    </p>
+    @if(article?.headlineImage){
+        <img class="headline-image" src="{{article?.headlineImage}}" alt="">
+    }
+    <div class="date-author-info">
+    </div>
+    <div class="article-text" [innerHTML]="article?.articleText"></div>
+
+    <div class="voting-div">
+        <button mat-icon-button [matTooltip]="user ? 'Upvote Article' : 'Signup to upvote'" (click)="upvoteClick(article!, user)">
+            <mat-icon  [fontSet]="(article | checkUpvoted : user)? 'material-icons' : 'material-icons-outlined'">thumb_up</mat-icon>
+        </button>
+        <button mat-icon-button [matTooltip]="user ? 'Downvote Article' : 'Signup to downvote'" (click)="downvoteClick(article!, user)">
+            <mat-icon [fontSet]="(article | checkDownvoted : user)? 'material-icons' : 'material-icons-outlined'" >thumb_down</mat-icon>
+        </button>
+    </div>
 </main>
-    
+</ng-container>

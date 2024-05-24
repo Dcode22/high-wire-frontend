@@ -18,5 +18,7 @@
         <ngx-editor-menu [editor]="editor"> </ngx-editor-menu>
         <ngx-editor minHeight="500px" [editor]="editor" [(ngModel)]="html" [disabled]="false" [placeholder]="'Type here...'"></ngx-editor>
     </div>
-    <button mat-raised-button color="primary" (click)="save()"> Save</button>
+    <ng-container *ngrxLet="user$ as user">
+        <button mat-raised-button color="primary" (click)="save(user!)"> Save</button>
+    </ng-container>
 </main>
