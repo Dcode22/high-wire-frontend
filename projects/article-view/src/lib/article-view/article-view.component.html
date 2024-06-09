@@ -1,5 +1,5 @@
 <ng-container *ngrxLet="user$ as user">
-<main *ngrxLet="selectedArticle$ as article">
+<main *ngIf="(selectedArticle$ | async) as article">
     <div class="headline-container">    
         <h1>{{article?.headline}}</h1>
         <h3>{{article?.subtitle}}</h3>

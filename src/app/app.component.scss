@@ -1,23 +1,5 @@
-header{
-    border-bottom: 2px solid white;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    align-items: baseline;
-    margin: 0%;
-    padding: 0%;
-    height: 100px;
-}
-
-img{
-    background-color: black;
-    width: 350px;
-    height: 80px;
-    margin: 10px;
-    padding: 0%;
-}
-
-.header-right {
-    display: flex;
-    align-items: baseline;
-    justify-content: flex-end;
+lib-header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }

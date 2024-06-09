@@ -1,26 +1,43 @@
+@media (width >= 900px) {
+    .container {    
+        width: 400px;
+        padding: 16px 0 16px 0;
+    }
+};
+
+@media (width < 900px) {
+    .container {    
+        width: 100vw;
+        padding: 16px 32px;
+    }
+}
 .container {
-    padding: 16px;
-    width: 400px;
     border-radius: 0%;
     box-shadow: none;
-    height: 400px;
     background: none;
+    box-sizing: border-box;
     border-bottom: 1px grey solid;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     h1, h2 {
         margin: 0%;
         margin-bottom: 16px;
-    }
-
-    h1 {
-        font-size: 50px;
     }
     .subtitle {
         font-family: 'Helvetica Neue', Helvetica, sans-serif;
         font-weight: 300;
     }
+    .no-image-headline {
+        font-size: 60px;
+    }
+    .no-image-subtitle {
+        font-size: 24px;
+    }
     img {
-        height: 275px;
         width: 100%;
+        // aspect-ratio: 5/3;
         object-fit: cover;
         margin-bottom: 10px;
     }

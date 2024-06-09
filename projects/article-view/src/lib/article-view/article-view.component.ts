@@ -10,9 +10,10 @@ import { first } from 'rxjs';
 import { Article, User } from 'projects/data-models/src/public-api';
 import { CheckDownvotedPipe } from 'projects/pipes/src/lib/check-downvoted/check-downvoted.pipe';
 import { CheckUpvotedPipe } from 'projects/pipes/src/lib/check-upvoted/check-upvoted.pipe';
+import { CommonModule } from '@angular/common';
 @Component({
   standalone: true,
-  imports: [LetDirective, MatIconModule, MatButtonModule, RouterModule, MatIconModule, MatTooltipModule, CheckDownvotedPipe, CheckUpvotedPipe],
+  imports: [CommonModule, LetDirective, MatIconModule, MatButtonModule, RouterModule, MatIconModule, MatTooltipModule, CheckDownvotedPipe, CheckUpvotedPipe],
   selector: 'lib-article-view',
   templateUrl: './article-view.component.html',
   styleUrls: ['./article-view.component.scss']

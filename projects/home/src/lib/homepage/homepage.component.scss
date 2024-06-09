@@ -14,12 +14,18 @@
 
 main {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-column-gap: 20px;
-    width: 1300px;
+    grid-template-columns: 3fr 5fr 3fr;
+    grid-column-gap: 40px;
+    grid-auto-rows: auto;
+    // display: flex;
+    // flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+    width: min(1300px, 100vw);
+    box-sizing: border-box;
     margin: auto;
     margin-top: 16px;
-    padding: 0px;
+    padding: 16px;
 
     .grid-item {
         position: relative;
