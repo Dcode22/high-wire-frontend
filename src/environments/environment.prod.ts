@@ -1,4 +1,4 @@
 export const environment = {
     production: true,
-    apiEndpoint: 'https://api.example.com' // get actual api endpoint when deploying
+    apiEndpoint: 'https://high-wire-backend.vercel.app' // get actual api endpoint when deploying
 };
